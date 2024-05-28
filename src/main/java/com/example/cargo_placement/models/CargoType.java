@@ -1,6 +1,5 @@
 package com.example.cargo_placement.models;
 
-import com.example.cargo_placement.validators.ValidHexColor;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -21,10 +20,6 @@ public class CargoType {
     @Column(name = "name", unique = true)
     private String name;
 
-    @Column(name = "hex_color")
-    @ValidHexColor(message = "It is not valid HEX color")
-    private String hex_color;
-
     @Column(name = "length")
     @Positive(message = "Length must be a positive")
     private Float length;
@@ -32,8 +27,4 @@ public class CargoType {
     @Column(name = "width")
     @Positive(message = "Width must be a positive")
     private Float width;
-
-    @Column(name = "weight")
-    @Positive(message = "Weight must be a positive")
-    private Float weight;
 }

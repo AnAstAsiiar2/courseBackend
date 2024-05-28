@@ -15,6 +15,6 @@ import java.util.Optional;
 public interface ContainerRepository extends JpaRepository<Container,Integer> {
     @EntityGraph(attributePaths = {"cargos"})
     Optional<Container> findWithCargosById(@Param("id") Integer id);
-    @Query("SELECT new com.example.cargo_placement.models.ContainerDTO(c.id, c.name, c.maxWeight,c.length,c.width,c.createdAt) FROM Container c")
+    @Query("SELECT new com.example.cargo_placement.models.ContainerDTO(c.id, c.name,c.length,c.width,c.createdAt) FROM Container c")
     List<ContainerDTO> getAllContainerDTOs();
 }

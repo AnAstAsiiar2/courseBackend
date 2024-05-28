@@ -23,10 +23,6 @@ public class Container {
     @Column(name = "name", unique = true)
     private String name;
 
-    @Positive(message = "Max weight must be a positive")
-    @Column(name = "max_weight")
-    private Float maxWeight;
-
     @Positive(message = "Length must be a positive")
     @Column(name = "length")
     private Float length;

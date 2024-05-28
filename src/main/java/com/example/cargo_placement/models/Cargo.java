@@ -26,7 +26,7 @@ public class Cargo {
     @JoinColumn(name = "type_id")
     private CargoType cargoType;
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.DETACH)
     @JoinColumn(name = "container_id")
     @JsonBackReference
     private Container container;
